@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: mart_crimes_by_district
+    description: "Aggregated crime counts by district and year"
+
+
+  - name: mart_crimes_by_type_year
+    description: "Aggregated crime counts by primary type and year"
