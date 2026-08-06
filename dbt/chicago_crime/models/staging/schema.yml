@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: stg_crime_reports
+    description: "Cleaned and deduplicated Chicago crime records"
+    columns:
+      - name: id
+        description: "Unique crime record identifier"
+        data_tests:
+          - not_null
+          - unique
+      - name: primary_type
+        description: "Primary crime type classification"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [
+                'THEFT',
+                'BATTERY',
+                'CRIMINAL DAMAGE',
+                'ASSAULT',
+                'MOTOR VEHICLE THEFT',
+                'OTHER OFFENSE',
+                'DECEPTIVE PRACTICE',
+                'BURGLARY',
+                'NARCOTICS',
+                'CRIMINAL TRESPASS',
+                'ROBBERY',
+                'WEAPONS VIOLATION',
+                'PUBLIC PEACE VIOLATION',
+                'OFFENSE INVOLVING CHILDREN',
+                'CRIMINAL SEXUAL ASSAULT',
+                'SEX OFFENSE',
+                'GAMBLING',
+                'LIQUOR LAW VIOLATION',
+                'ARSON',
+                'HOMICIDE',
+                'KIDNAPPING',
+                'INTERFERENCE WITH PUBLIC OFFICER',
+                'INTIMIDATION',
+                'STALKING',
+                'OBSCENITY',
+                'NON-CRIMINAL',
+                'PROSTITUTION',
+                'HUMAN TRAFFICKING',
+                'PUBLIC INDECENCY',
+                'OTHER NARCOTIC VIOLATION',
+                'CONCEALED CARRY LICENSE VIOLATION',
+                'NON-CRIMINAL (SUBJECT SPECIFIED)'
+              ]
+      - name: crime_date
+        description: "Date and time the crime occurred"
+        data_tests:
+          - not_null
+      - name: district
+        description: "Chicago police district number"
+        data_tests:
+          - not_null
+      - name: latitude
+        description: "Latitude coordinate of the crime location"
+      - name: longitude
+        description: "Longitude coordinate of the crime location"
