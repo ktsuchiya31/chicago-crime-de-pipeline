@@ -1,0 +1,60 @@
+[0m14:54:01.744604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D168064980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D16A4ABED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D16A4AB9D0>]}
+
+
+============================== 14:54:01.765829 | 1964a6e1-a96d-40b7-a2c0-77e5cc2ce202 ==============================
+[0m14:54:01.765829 [info ] [MainThread]: Running with dbt=1.12.0
+[0m14:54:01.767080 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\kouts\\.dbt', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt init chicago_crime', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m14:54:01.810092 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\kouts\.dbt
+[0m14:54:01.818349 [debug] [MainThread]: Starter project path: C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\include\starter_project
+[0m14:54:01.919925 [info ] [MainThread]: Setting up your profile.
+[0m14:54:20.073864 [debug] [MainThread]: Redshift adapter: Setting redshift_connector to ERROR
+[0m14:54:20.074498 [debug] [MainThread]: Redshift adapter: Setting redshift_connector.core to ERROR
+[0m14:55:36.830684 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+
+[0m14:55:36.835679 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\cli\requires.py", line 190, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\cli\requires.py", line 136, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\cli\main.py", line 503, in init
+    results = task.run()
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\task\init.py", line 360, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\task\init.py", line 264, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\task\init.py", line 181, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\task\init.py", line 165, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\dbt\task\init.py", line 131, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\click\termui.py", line 218, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\kouts\AppData\Roaming\Python\Python313\site-packages\click\termui.py", line 201, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m14:55:36.837639 [debug] [MainThread]: Command `dbt init` failed at 14:55:36.837416 after 95.45 seconds
+[0m14:55:36.838571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D16B7EE190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D16B888DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D16A5D0E20>]}
+[0m14:55:36.839413 [debug] [MainThread]: Flushing usage events
+[0m14:55:37.376908 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:56:14.451116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029FD5F38980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029FD837BED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029FD837B9D0>]}
+
+
+============================== 14:56:14.464146 | 1e82fb2b-fd11-4ae3-a51b-b7c36ad27b3d ==============================
+[0m14:56:14.464146 [info ] [MainThread]: Running with dbt=1.12.0
+[0m14:56:14.465518 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\kouts\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init chicago_crime', 'log_path': 'logs'}
+[0m14:56:14.493268 [info ] [MainThread]: A project called chicago_crime already exists here.
+[0m14:56:14.494598 [debug] [MainThread]: Command `dbt init` succeeded at 14:56:14.494408 after 0.41 seconds
+[0m14:56:14.495090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029FD84BE2C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029FD828EB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029FD84A1AE0>]}
+[0m14:56:14.495712 [debug] [MainThread]: Flushing usage events
+[0m14:56:15.036137 [debug] [MainThread]: An error was encountered while trying to flush usage events

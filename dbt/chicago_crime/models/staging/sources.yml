@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: chicago_raw
+    database: dev
+    schema: chicago_raw
+    tables:
+      - name: crimes
+        description: "Raw Chicago crime records loaded from S3"
