@@ -34,8 +34,8 @@ URL: https://data.cityofchicago.org/resource/ijzp-q8t2.json
 
 ## Data Lineage
 
-![dbt Lineage Graph](docs/images/lineage_graph.png)
+![dbt Lineage Graph](docs/images/Chicago-Crime-Lineage-Graph.png)
 
 ## dbt Catalog
 
-![dbt Catalog](docs/images/dbt_catalog.png)
+![dbt Catalog](docs/images/Chicago-Crime-Column.png)
