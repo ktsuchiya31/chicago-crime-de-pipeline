@@ -31,3 +31,11 @@ URL: https://data.cityofchicago.org/resource/ijzp-q8t2.json
 - Nulls: location_description (481), latitude/longitude (72), community_area (2)
 - Columns to cast in dbt: latitude, longitude, x_coordinate, y_coordinate, year → numeric
 - Columns to drop in dbt: location (redundant with lat/long)
+
+## Data Lineage
+
+![dbt Lineage Graph](docs/images/lineage_graph.png)
+
+## dbt Catalog
+
+![dbt Catalog](docs/images/dbt_catalog.png)
