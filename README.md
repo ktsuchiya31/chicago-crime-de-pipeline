@@ -42,13 +42,17 @@ An end-to-end data engineering project that ingests, transforms, and visualizes 
 ## dbt Models
 
 chicago_raw
+
 └── crimes (source)
 
 chicago_staging
+
 └── stg_crime_reports (cleaned, cast, deduplicated)
 
 chicago_marts
+
 ├── mart_crimes_by_district (aggregated by district + year)
+
 └── mart_crimes_by_type_year (aggregated by type + year)
 
 
