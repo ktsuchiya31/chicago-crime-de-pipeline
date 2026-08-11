@@ -60,14 +60,15 @@ def upload_to_s3(df: pd.DataFrame, bucket: str, key: str) -> None:
 
 def run():
     bucket = os.getenv('S3_BUCKET', 'chicago-crime-de-koutsuchiya')
-    year = datetime.now().year
-    df = fetch_crimes(year=year)
-    df = clean_crimes(df)
-    key = f"raw/crimes_{year}.csv"
-    upload_to_s3(df, bucket, key)
-    logger.info(f"Pipeline complete — {len(df)} rows uploaded to {key}")
+    
+    for year in [2025, 2026]:
+        df = fetch_crimes(year=year)
+        df = clean_crimes(df)
+        key = f"raw/crimes_{year}.csv"
+        upload_to_s3(df, bucket, key)
+        logger.info(f"Pipeline complete — {len(df)} rows uploaded to {key}")
+    
     return {"row_count": len(df), "columns": list(df.columns)}
-
 
 if __name__ == "__main__":
     run()
