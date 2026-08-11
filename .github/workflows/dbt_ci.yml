@@ -1,0 +1,45 @@
+name: dbt CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  dbt-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt
+        run: pip install dbt-redshift
+
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          chicago_crime:
+            target: dev
+            outputs:
+              dev:
+                type: redshift
+                host: ${{ secrets.REDSHIFT_HOST }}
+                port: 5439
+                user: ${{ secrets.REDSHIFT_USER }}
+                password: ${{ secrets.REDSHIFT_PASSWORD }}
+                dbname: dev
+                schema: chicago_staging
+                threads: 4
+          EOF
+
+      - name: Run dbt test
+        working-directory: dbt/chicago_crime
+        run: dbt test
