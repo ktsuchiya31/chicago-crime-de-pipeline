@@ -116,35 +116,67 @@ and runs all schema tests. A failing test blocks the merge.
 ## Project Structure
 
 chicago-crime-de-pipeline/
+
 ├── dags/
+
 │ ├── hello_chicago.py
+
 │ └── ingest_crimes_dag.py
+
 ├── scripts/
+
 │ ├── download_data.py
+
 │ ├── ingest_crimes.py
+
 │ └── test_s3.py
+
 ├── dbt/
+
 │ └── chicago_crime/
+
 │ ├── models/
+
 │ │ ├── staging/
+
 │ │ │ ├── sources.yml
+
 │ │ │ ├── schema.yml
+
 │ │ │ └── stg_crime_reports.sql
+
 │ │ └── marts/
+
 │ │ ├── schema.yml
+
 │ │ ├── mart_crimes_by_district.sql
+
 │ │ └── mart_crimes_by_type_year.sql
+
 │ └── macros/
+
 │ └── generate_schema_name.sql
+
 ├── docs/
+
 │ └── images/
+
 │ ├── Chicago-crime-Lineage-Graph.png
+
 │ └── Chicago-Crime-Dashboard.png
+
 ├── powerbi/
+
 │ └── Chicago-Crime-Dashboard.pbix
+
 ├── .github/
+
 │ └── workflows/
+
 │ └── dbt_ci.yml
+
 ├── .env
+
 ├── .gitignore
+
 └── README.md
